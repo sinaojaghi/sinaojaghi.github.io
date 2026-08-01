@@ -335,7 +335,7 @@
 <section id="hero">
   <canvas id="neural-canvas"></canvas>
   <div class="hero-content">
-    <div class="hero-profile"><img src="media/94318.jpg" alt="Sina Ojaghi" loading="eager"></div>
+    <div class="hero-profile"><img src="media/Untitled-1.png" alt="Sina Ojaghi" loading="eager"></div>
     <div class="hero-badge"><span class="hero-badge-dot"></span>Seeking Postdoc &amp; Research Collaboration</div>
     <h1 class="hero-name">Sina Ojaghi</h1>
     <p class="hero-role">
@@ -363,15 +363,8 @@
     <h2 class="sec-head fade-in">Researcher, Engineer,<br><em>Architect of Secure Hardware</em></h2>
     <div class="about-grid fade-in">
       <div class="about-photo-wrap">
-        <div class="photo-carousel" id="photoCarousel" onclick="nextPhoto()">
-          <img src="media/IMG_5348.jpg" alt="Sina Ojaghi" class="active" loading="lazy">
-          <img src="media/aboutme.jpg" alt="Sina Ojaghi — researcher" loading="lazy">
-          <img src="media/94318.jpg" alt="Sina Ojaghi — formal" loading="lazy">
-        </div>
-        <div class="photo-dots">
-          <span class="photo-dot active" onclick="goToPhoto(0)"></span>
-          <span class="photo-dot" onclick="goToPhoto(1)"></span>
-          <span class="photo-dot" onclick="goToPhoto(2)"></span>
+        <div class="about-photo">
+          <img src="media/aboutme.jpg" alt="Sina Ojaghi — Ph.D. Student and Hardware Security Researcher" loading="lazy">
         </div>
         <div class="socials">
           <a class="chip" href="https://www.linkedin.com/in/sina-ojaghi" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> LinkedIn</a>
@@ -939,13 +932,12 @@
       </div>
     </div>
 
-    <!-- Visitor Counter (Flag Counter) -->
+    <!-- Visitor Globe (MapMyVisitors) -->
     <div class="visitor-map">
       <div class="visitor-map-title">Visitors Around the World</div>
       <div style="max-width:600px;margin:auto;text-align:center;">
-        <a href="https://info.flagcounter.com/XXXX"><img src="https://s01.flagcounter.com/count2/XXXX/bg_080810/txt_F0F0F0/border_1A1A2E/columns_6/maxflags_30/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0" loading="lazy" style="border-radius:12px;"></a>
+        <script type="text/javascript" id="mmvst_globe" src="//mapmyvisitors.com/globe.js?d=4aZ2OsspBj7Chr5-jLJghgxfHBKsfMVsRbFOfQCc2xY"></script>
       </div>
-      <p style="font-size:.7rem;color:var(--muted2);margin-top:12px;">⚠️ To activate: visit <a href="https://flagcounter.com" target="_blank" style="color:var(--accent);">flagcounter.com</a>, create your counter, and replace the XXXX codes above with your unique ID.</p>
     </div>
   </div>
 </section>
@@ -1020,27 +1012,6 @@ function handleContactSubmit(){
   return false;
 }
 
-/* ── PHOTO CAROUSEL ── */
-let currentPhoto=0;
-const photos=document.querySelectorAll('#photoCarousel img');
-const dots=document.querySelectorAll('.photo-dot');
-
-function goToPhoto(idx){
-  photos.forEach(p=>p.classList.remove('active'));
-  dots.forEach(d=>d.classList.remove('active'));
-  currentPhoto=idx;
-  photos[currentPhoto].classList.add('active');
-  dots[currentPhoto].classList.add('active');
-}
-
-function nextPhoto(){
-  goToPhoto((currentPhoto+1)%photos.length);
-}
-
-/* Auto-rotate every 4 seconds */
-let carouselInterval=setInterval(nextPhoto,4000);
-document.getElementById('photoCarousel').addEventListener('mouseenter',()=>clearInterval(carouselInterval));
-document.getElementById('photoCarousel').addEventListener('mouseleave',()=>{carouselInterval=setInterval(nextPhoto,4000);});
 </script>
 </body>
 </html>
