@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Sina Ojaghi | Ph.D. Student · Computer Architecture · Hardware Security Researcher</title>
   <meta name="description" content="Sina Ojaghi — Ph.D. student in Computer Architecture at University of Tehran. Researcher in Hardware Security, Side-Channel Attacks, and Spiking Neural Networks. 7 publications. Based in Tehran, Iran.">
-  <meta name="keywords" content="Sina Ojaghi, سینا عجقی, Computer Architecture, Hardware Security, Side-Channel Attacks, Spiking Neural Networks, FPGA, University of Tehran, IPM, Ph.D., Researcher, VHDL, SystemVerilog, Python, MATLAB">
+  <meta name="keywords" content="Sina Ojaghi, سینا اوجاقی, Computer Architecture, Hardware Security, Side-Channel Attacks, Spiking Neural Networks, FPGA, University of Tehran, IPM, Ph.D., Researcher, VHDL, SystemVerilog, Python, MATLAB">
   <meta name="author" content="Sina Ojaghi">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://sinaoj.com/">
@@ -18,7 +18,7 @@
   <meta name="twitter:title" content="Sina Ojaghi | Computer Architecture Researcher">
   <meta name="twitter:description" content="Ph.D. at University of Tehran · Research Assistant at IPM · 7 Publications · Hardware Security & SNN">
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Person","name":"Sina Ojaghi","alternateName":["سینا عجقی","Sina Oj"],"url":"https://sinaoj.com","email":"oj.sina@gmail.com","jobTitle":"Ph.D. Student in Computer Architecture","description":"Ph.D. student in Computer Architecture at University of Tehran. Research Assistant at IPM. Specialist in Hardware Security, Side-Channel Attacks, and Spiking Neural Networks.","alumniOf":[{"@type":"CollegeOrUniversity","name":"University of Tehran"},{"@type":"CollegeOrUniversity","name":"Islamic Azad University, Science and Research Branch"},{"@type":"CollegeOrUniversity","name":"Hamedan University of Technology"}],"award":["13th place in 2020 Ph.D. entrance exam for Computer Architecture","1st place M.S. class of 2017","2nd place B.S. class of 2013","1st place ACM Competitions Hamedan Province"],"sameAs":["https://www.linkedin.com/in/sina-ojaghi","https://scholar.google.com/citations?user=1NJF8awAAAAJ&hl=en&oi=ao","https://www.researchgate.net/profile/Sina-Ojaghi","https://github.com/sinaojaghi"]}
+  {"@context":"https://schema.org","@type":"Person","name":"Sina Ojaghi","alternateName":["سینا اوجاقی","Sina Oj"],"url":"https://sinaoj.com","email":"oj.sina@gmail.com","jobTitle":"Ph.D. Student in Computer Architecture","description":"Ph.D. student in Computer Architecture at University of Tehran. Research Assistant at IPM. Specialist in Hardware Security, Side-Channel Attacks, and Spiking Neural Networks.","alumniOf":[{"@type":"CollegeOrUniversity","name":"University of Tehran"},{"@type":"CollegeOrUniversity","name":"Islamic Azad University, Science and Research Branch"},{"@type":"CollegeOrUniversity","name":"Hamedan University of Technology"}],"award":["13th place in 2020 Ph.D. entrance exam for Computer Architecture","1st place M.S. class of 2017","2nd place B.S. class of 2013","1st place ACM Competitions Hamedan Province"],"sameAs":["https://www.linkedin.com/in/sina-ojaghi","https://scholar.google.com/citations?user=1NJF8awAAAAJ&hl=en&oi=ao","https://www.researchgate.net/profile/Sina-Ojaghi","https://github.com/sinaojaghi"]}
   </script>
   <link rel="icon" type="image/png" href="media/favicon/icons8-elektronik-color-96.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -98,6 +98,13 @@
       color:var(--muted);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;
       animation:scrollBounce 2.2s infinite;}
     @keyframes scrollBounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(9px)}}
+    .hero-profile{width:140px;height:140px;border-radius:50%;overflow:hidden;
+      border:3px solid rgba(0,212,255,.35);margin:0 auto 28px;position:relative;
+      box-shadow:0 0 40px rgba(0,212,255,.15),0 0 80px rgba(255,107,53,.08);}
+    .hero-profile img{width:100%;height:100%;object-fit:cover;display:block;}
+    .hero-profile::after{content:'';position:absolute;inset:-3px;border-radius:50%;
+      background:var(--gradient);z-index:-1;opacity:.5;animation:profileGlow 3s ease-in-out infinite alternate;}
+    @keyframes profileGlow{0%{opacity:.3;transform:scale(1)}100%{opacity:.6;transform:scale(1.04)}}
 
     /* ── SECTION WRAPPER ── */
     .sec{max-width:1100px;margin:0 auto;padding:96px 24px;}
@@ -117,7 +124,18 @@
       border:1px solid var(--border);position:relative;background:var(--bg3);}
     .about-photo::after{content:'';position:absolute;inset:-1px;border-radius:19px;
       background:var(--gradient);z-index:-1;opacity:.4;}
-    .about-photo img{width:100%;height:100%;object-fit:cover;display:block;}
+    .about-photo img{width:100%;height:100%;object-fit:cover;display:block;
+      transition:opacity .5s ease;}
+    .photo-carousel{position:relative;width:100%;aspect-ratio:1;border-radius:18px;overflow:hidden;
+      border:1px solid var(--border);background:var(--bg3);cursor:pointer;}
+    .photo-carousel::after{content:'';position:absolute;inset:-1px;border-radius:19px;
+      background:var(--gradient);z-index:-1;opacity:.4;}
+    .photo-carousel img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+      opacity:0;transition:opacity .7s ease;}
+    .photo-carousel img.active{opacity:1;}
+    .photo-dots{display:flex;gap:6px;justify-content:center;margin-top:10px;}
+    .photo-dot{width:8px;height:8px;border-radius:50%;background:var(--muted2);cursor:pointer;transition:all .3s;}
+    .photo-dot.active{background:var(--accent);transform:scale(1.3);}
     .socials{display:flex;flex-wrap:wrap;gap:7px;margin-top:18px;}
     .chip{display:inline-flex;align-items:center;gap:6px;padding:7px 13px;border-radius:100px;
       background:var(--card);border:1px solid var(--border);color:var(--muted);
@@ -317,6 +335,7 @@
 <section id="hero">
   <canvas id="neural-canvas"></canvas>
   <div class="hero-content">
+    <div class="hero-profile"><img src="media/94318.jpg" alt="Sina Ojaghi" loading="eager"></div>
     <div class="hero-badge"><span class="hero-badge-dot"></span>Seeking Postdoc &amp; Research Collaboration</div>
     <h1 class="hero-name">Sina Ojaghi</h1>
     <p class="hero-role">
@@ -326,7 +345,7 @@
     <div class="hero-awards">
       <span class="hero-award"><i class="fas fa-medal"></i> 13th in National Ph.D. Exam 2020</span>
       <span class="hero-award"><i class="fas fa-trophy"></i> Ranked 1st · M.S. Cohort 2017</span>
-      <span class="hero-award"><i class="fas fa-award"></i> 1st Place ACM · Hamedan Province</span>
+      <span class="hero-award"><i class="fas fa-award"></i> Ranked 2st · B.S. Cohort 2013</span>
     </div>
     <div class="hero-cta-row">
       <a href="#about" class="btn-primary"><i class="fas fa-arrow-down"></i> Explore My Work</a>
@@ -344,8 +363,15 @@
     <h2 class="sec-head fade-in">Researcher, Engineer,<br><em>Architect of Secure Hardware</em></h2>
     <div class="about-grid fade-in">
       <div class="about-photo-wrap">
-        <div class="about-photo">
-          <img src="media/aboutme.jpg" alt="Sina Ojaghi — Ph.D. Student and Hardware Security Researcher" loading="lazy">
+        <div class="photo-carousel" id="photoCarousel" onclick="nextPhoto()">
+          <img src="media/IMG_5348.jpg" alt="Sina Ojaghi" class="active" loading="lazy">
+          <img src="media/aboutme.jpg" alt="Sina Ojaghi — researcher" loading="lazy">
+          <img src="media/94318.jpg" alt="Sina Ojaghi — formal" loading="lazy">
+        </div>
+        <div class="photo-dots">
+          <span class="photo-dot active" onclick="goToPhoto(0)"></span>
+          <span class="photo-dot" onclick="goToPhoto(1)"></span>
+          <span class="photo-dot" onclick="goToPhoto(2)"></span>
         </div>
         <div class="socials">
           <a class="chip" href="https://www.linkedin.com/in/sina-ojaghi" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> LinkedIn</a>
@@ -357,7 +383,7 @@
         </div>
       </div>
       <div class="about-body">
-        <p>Hello! I'm <strong>Sina Ojaghi (سینا عجقی)</strong>, a Ph.D. student in <strong>Computer Architecture</strong> at the <strong>University of Tehran</strong>, and a Research Assistant at the <strong>Institute for Research in Fundamental Sciences (IPM)</strong>. My research bridges <strong>Hardware Security</strong>, <strong>Side-Channel Attacks on FPGAs</strong>, and <strong>Spiking Neural Networks</strong> for sustainable technologies.</p>
+        <p>Hello! I'm <strong>Sina Ojaghi (سینا اوجاقی)</strong>, a Ph.D. student in <strong>Computer Architecture</strong> at the <strong>University of Tehran</strong>, and a Research Assistant at the <strong>Institute for Research in Fundamental Sciences (IPM)</strong>. My research bridges <strong>Hardware Security</strong>, <strong>Side-Channel Attacks on FPGAs</strong>, and <strong>Spiking Neural Networks</strong> for sustainable technologies.</p>
         <p>With a track record as an instructor at Hamedan University of Technology and the University of Tehran, I've taught courses in AI, Computer Networks, and Research Methods. I also serve as Secretary and Speaker of the <strong>Cyber-Physical Systems Society of Iran (CPSSI)</strong>.</p>
         <p>My industry experience includes roles as Hardware Programmer at Afra Turbine Energy Co. and former IT Manager at HamVta Arya Co., where I applied my technical expertise to real-world embedded systems and infrastructure challenges.</p>
         <div class="kpi-row">
@@ -446,6 +472,53 @@
   </div>
 </section>
 
+<!-- ══ HONORS & CERTIFICATES ══ -->
+<section id="honors">
+  <div class="sec-full" style="background:var(--bg2);">
+    <div class="sec-inner">
+      <div class="sec-label fade-in">Achievements</div>
+      <h2 class="sec-head fade-in">Honors &amp; <em>Certificates</em></h2>
+
+      <div class="honors-grid fade-in">
+        <div class="honor-card">
+          <div class="honor-icon"><i class="fas fa-medal"></i></div>
+          <div><div class="honor-text">13th place among candidates in the 2020 National Ph.D. entrance exam for Computer Architecture</div></div>
+        </div>
+        <div class="honor-card">
+          <div class="honor-icon"><i class="fas fa-trophy"></i></div>
+          <div><div class="honor-text">1st place in the M.S. class of 2017, Computer Architecture</div><div class="honor-note">Islamic Azad University, Science and Research Branch</div></div>
+        </div>
+        <div class="honor-card">
+          <div class="honor-icon"><i class="fas fa-award"></i></div>
+          <div><div class="honor-text">2nd place in the B.S. class of 2013, Computer Architecture</div><div class="honor-note">Hamedan University of Technology</div></div>
+        </div>
+        <div class="honor-card">
+          <div class="honor-icon"><i class="fas fa-code"></i></div>
+          <div><div class="honor-text">1st place in the ACM Competitions, Hamedan Province</div></div>
+        </div>
+      </div>
+
+      <div style="margin-top:48px;">
+        <div class="sec-label" style="margin-bottom:18px;">Certificates &amp; Recognitions</div>
+        <div class="certs-grid fade-in">
+          <div class="cert-card">
+            <div class="cert-icon"><i class="fas fa-laptop-code"></i></div>
+            <div><div class="cert-name">Top Project — Elcamp Exhibition</div><div class="cert-note">Computer Dept., Hamedan UT · 2016</div></div>
+          </div>
+          <div class="cert-card">
+            <div class="cert-icon"><i class="fas fa-flask"></i></div>
+            <div><div class="cert-name">Top Project — Research &amp; Technology Exhibition</div><div class="cert-note">Computer Dept., Hamedan UT · 2016</div></div>
+          </div>
+          <div class="cert-card">
+            <div class="cert-icon"><i class="fas fa-hospital"></i></div>
+            <div><div class="cert-name">Top Project — Smart Hospital Smartening</div><div class="cert-note">Computer Dept., Hamedan UT · 2017</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ══ EDUCATION & EXPERIENCE ══ -->
 <section id="experience">
   <div class="sec">
@@ -463,7 +536,47 @@
           <div class="tl-desc">GPA: 18.05/20. Proposal: Design and Implementation of Remote Side-Channel Attacks and Countermeasures on Spiking Neural Networks.</div>
         </div>
       </div>
-
+	  
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-meta"><span class="tag tag-edu">Education</span><span class="tl-year">2017 – 2019</span></div>
+          <div class="tl-title">M.S. in Computer Engineering — Computer Architecture</div>
+          <div class="tl-place">Islamic Azad University, Science and Research Branch, Tehran</div>
+          <div class="tl-desc">GPA: 18.45/20. <strong>Ranked 1st</strong> in cohort. Thesis: Design and manufacture of audio processors for smartening domestically produced vehicles.</div>
+        </div>
+      </div>
+	  
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-meta"><span class="tag tag-edu">Education</span><span class="tl-year">2013 – 2017</span></div>
+          <div class="tl-title">B.S. in Computer Engineering — Computer Architecture</div>
+          <div class="tl-place">Hamedan University of Technology, Hamedan, Iran</div>
+          <div class="tl-desc">GPA: 16.34/20. <strong>Ranked 2nd</strong> in cohort. Thesis: Transfer voice data under secure protocol and use it in smart homes.</div>
+        </div>
+      </div>
+	  
+	  <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-meta"><span class="tag tag-work">Teaching</span><span class="tl-year">Sep 2024 – Present</span></div>
+          <div class="tl-title">Instructor — Computer Networks Laboratory</div>
+          <div class="tl-place">University of Tehran</div>
+          <div class="tl-desc">Teaching undergraduate computer networks laboratory courses and supervising hands-on networking experiments.</div>
+        </div>
+      </div>
+      
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-meta"><span class="tag tag-work">Teaching</span><span class="tl-year">Sep 2021 – Oct 2023</span></div>
+          <div class="tl-title">Instructor — Artificial Intelligence &amp; Research Methods</div>
+          <div class="tl-place">Hamedan University of Technology</div>
+          <div class="tl-desc">Teaching AI and Research Methods courses in the Department of Computer/IT Engineering and Electrical Engineering.</div>
+        </div>
+      </div>
+	  
       <div class="tl-item">
         <div class="tl-dot"></div>
         <div class="tl-card">
@@ -483,14 +596,14 @@
           <div class="tl-desc">Focusing on FPGA hardware security, side-channel attacks, and PUFs under Dr. Siamak Mohammadi.</div>
         </div>
       </div>
-
-      <div class="tl-item">
+	  
+	  <div class="tl-item">
         <div class="tl-dot"></div>
         <div class="tl-card">
-          <div class="tl-meta"><span class="tag tag-work">Teaching</span><span class="tl-year">Sep 2024 – Present</span></div>
-          <div class="tl-title">Instructor — Computer Networks Laboratory</div>
-          <div class="tl-place">University of Tehran</div>
-          <div class="tl-desc">Teaching undergraduate computer networks laboratory courses and supervising hands-on networking experiments.</div>
+          <div class="tl-meta"><span class="tag tag-research">CPSSI</span><span class="tl-year">Mar 2022 – Present</span></div>
+          <div class="tl-title">Secretary &amp; Speaker</div>
+          <div class="tl-place">Cyber-Physical Systems Society of Iran</div>
+          <div class="tl-desc"><a href="https://cpssi.ir/" target="_blank" rel="noopener" style="color:var(--accent)">cpssi.ir</a></div>
         </div>
       </div>
 
@@ -504,26 +617,6 @@
             <li>Designed and implemented embedded software for microcontroller-based hardware systems</li>
             <li>Developed firmware updates to improve functionality and performance</li>
           </ul></div>
-        </div>
-      </div>
-
-      <div class="tl-item">
-        <div class="tl-dot"></div>
-        <div class="tl-card">
-          <div class="tl-meta"><span class="tag tag-work">Teaching</span><span class="tl-year">Sep 2021 – Oct 2023</span></div>
-          <div class="tl-title">Instructor — Artificial Intelligence &amp; Research Methods</div>
-          <div class="tl-place">Hamedan University of Technology</div>
-          <div class="tl-desc">Teaching AI and Research Methods courses in the Department of Computer/IT Engineering and Electrical Engineering.</div>
-        </div>
-      </div>
-
-      <div class="tl-item">
-        <div class="tl-dot"></div>
-        <div class="tl-card">
-          <div class="tl-meta"><span class="tag tag-edu">Education</span><span class="tl-year">2017 – 2019</span></div>
-          <div class="tl-title">M.S. in Computer Engineering — Computer Architecture</div>
-          <div class="tl-place">Islamic Azad University, Science and Research Branch, Tehran</div>
-          <div class="tl-desc">GPA: 18.45/20. <strong>Ranked 1st</strong> in cohort. Thesis: Design and manufacture of audio processors for smartening domestically produced vehicles.</div>
         </div>
       </div>
 
@@ -544,26 +637,6 @@
           <div class="tl-title">R &amp; D Engineer</div>
           <div class="tl-place">Nabz, Tehran</div>
           <div class="tl-desc">Research and development at <a href="https://nabzgroup.com/" target="_blank" rel="noopener" style="color:var(--accent)">nabzgroup.com</a>.</div>
-        </div>
-      </div>
-
-      <div class="tl-item">
-        <div class="tl-dot"></div>
-        <div class="tl-card">
-          <div class="tl-meta"><span class="tag tag-edu">Education</span><span class="tl-year">2013 – 2017</span></div>
-          <div class="tl-title">B.S. in Computer Engineering — Computer Architecture</div>
-          <div class="tl-place">Hamedan University of Technology, Hamedan, Iran</div>
-          <div class="tl-desc">GPA: 16.34/20. <strong>Ranked 2nd</strong> in cohort. Thesis: Transfer voice data under secure protocol and use it in smart homes.</div>
-        </div>
-      </div>
-
-      <div class="tl-item">
-        <div class="tl-dot"></div>
-        <div class="tl-card">
-          <div class="tl-meta"><span class="tag tag-research">CPSSI</span><span class="tl-year">Mar 2022 – Present</span></div>
-          <div class="tl-title">Secretary &amp; Speaker</div>
-          <div class="tl-place">Cyber-Physical Systems Society of Iran</div>
-          <div class="tl-desc"><a href="https://cpssi.ir/" target="_blank" rel="noopener" style="color:var(--accent)">cpssi.ir</a></div>
         </div>
       </div>
 
@@ -757,53 +830,6 @@
   </div>
 </section>
 
-<!-- ══ HONORS & CERTIFICATES ══ -->
-<section id="honors">
-  <div class="sec-full" style="background:var(--bg2);">
-    <div class="sec-inner">
-      <div class="sec-label fade-in">Achievements</div>
-      <h2 class="sec-head fade-in">Honors &amp; <em>Certificates</em></h2>
-
-      <div class="honors-grid fade-in">
-        <div class="honor-card">
-          <div class="honor-icon"><i class="fas fa-medal"></i></div>
-          <div><div class="honor-text">13th place among candidates in the 2020 National Ph.D. entrance exam for Computer Architecture</div></div>
-        </div>
-        <div class="honor-card">
-          <div class="honor-icon"><i class="fas fa-trophy"></i></div>
-          <div><div class="honor-text">1st place in the M.S. class of 2017, Computer Architecture</div><div class="honor-note">Islamic Azad University, Science and Research Branch</div></div>
-        </div>
-        <div class="honor-card">
-          <div class="honor-icon"><i class="fas fa-award"></i></div>
-          <div><div class="honor-text">2nd place in the B.S. class of 2013, Computer Architecture</div><div class="honor-note">Hamedan University of Technology</div></div>
-        </div>
-        <div class="honor-card">
-          <div class="honor-icon"><i class="fas fa-code"></i></div>
-          <div><div class="honor-text">1st place in the ACM Competitions, Hamedan Province</div></div>
-        </div>
-      </div>
-
-      <div style="margin-top:48px;">
-        <div class="sec-label" style="margin-bottom:18px;">Certificates &amp; Recognitions</div>
-        <div class="certs-grid fade-in">
-          <div class="cert-card">
-            <div class="cert-icon"><i class="fas fa-laptop-code"></i></div>
-            <div><div class="cert-name">Top Project — Elcamp Exhibition</div><div class="cert-note">Computer Dept., Hamedan UT · 2016</div></div>
-          </div>
-          <div class="cert-card">
-            <div class="cert-icon"><i class="fas fa-flask"></i></div>
-            <div><div class="cert-name">Top Project — Research &amp; Technology Exhibition</div><div class="cert-note">Computer Dept., Hamedan UT · 2016</div></div>
-          </div>
-          <div class="cert-card">
-            <div class="cert-icon"><i class="fas fa-hospital"></i></div>
-            <div><div class="cert-name">Top Project — Smart Hospital Smartening</div><div class="cert-note">Computer Dept., Hamedan UT · 2017</div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ══ RESEARCH INTERESTS ══ -->
 <section id="interests">
   <div class="sec">
@@ -913,20 +939,19 @@
       </div>
     </div>
 
-    <!-- Visitor Map (ClustrMaps) -->
+    <!-- Visitor Counter (Flag Counter) -->
     <div class="visitor-map">
       <div class="visitor-map-title">Visitors Around the World</div>
-      <div style="max-width:600px;margin:auto;">
-        <script type="text/javascript" id="clustrmaps"
-          src="//clustrmaps.com/map_v2.js?d=d6OLmOQWbIKZG3jjNPa7yEsF_U7KHcGLPU_QetVEOTE&cl=ffffff&w=a">
-        </script>
+      <div style="max-width:600px;margin:auto;text-align:center;">
+        <a href="https://info.flagcounter.com/XXXX"><img src="https://s01.flagcounter.com/count2/XXXX/bg_080810/txt_F0F0F0/border_1A1A2E/columns_6/maxflags_30/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0" loading="lazy" style="border-radius:12px;"></a>
       </div>
+      <p style="font-size:.7rem;color:var(--muted2);margin-top:12px;">⚠️ To activate: visit <a href="https://flagcounter.com" target="_blank" style="color:var(--accent);">flagcounter.com</a>, create your counter, and replace the XXXX codes above with your unique ID.</p>
     </div>
   </div>
 </section>
 
 <footer>
-  <p>&copy; 2025 <span>Sina Ojaghi</span> (سینا عجقی) · All rights reserved</p>
+  <p>&copy; 2025 <span>Sina Ojaghi</span> (سینا اوجاقی) · All rights reserved</p>
 </footer>
 
 <script>
@@ -994,6 +1019,28 @@ function handleContactSubmit(){
   window.location.href=`mailto:oj.sina@gmail.com?subject=New Message From Website by "${name}" (${email})&body=${encodeURIComponent(msg)}`;
   return false;
 }
+
+/* ── PHOTO CAROUSEL ── */
+let currentPhoto=0;
+const photos=document.querySelectorAll('#photoCarousel img');
+const dots=document.querySelectorAll('.photo-dot');
+
+function goToPhoto(idx){
+  photos.forEach(p=>p.classList.remove('active'));
+  dots.forEach(d=>d.classList.remove('active'));
+  currentPhoto=idx;
+  photos[currentPhoto].classList.add('active');
+  dots[currentPhoto].classList.add('active');
+}
+
+function nextPhoto(){
+  goToPhoto((currentPhoto+1)%photos.length);
+}
+
+/* Auto-rotate every 4 seconds */
+let carouselInterval=setInterval(nextPhoto,4000);
+document.getElementById('photoCarousel').addEventListener('mouseenter',()=>clearInterval(carouselInterval));
+document.getElementById('photoCarousel').addEventListener('mouseleave',()=>{carouselInterval=setInterval(nextPhoto,4000);});
 </script>
 </body>
 </html>
